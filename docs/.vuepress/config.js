@@ -156,6 +156,21 @@ export default defineUserConfig({
         theme: "min-light",
       },
     },
+    style: `
+      .back-to-top {
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+      .back-to-top svg {
+        width: 50px; /* Adjust size as needed */
+        height: 50px; /* Adjust size as needed */
+      }
+    `, 
   }),
   head: [["link", { rel: "icon", href: "/images/favicon.ico" }]],
   bundler: viteBundler(),

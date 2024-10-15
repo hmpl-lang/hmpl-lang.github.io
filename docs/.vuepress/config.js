@@ -11,6 +11,9 @@ export default defineUserConfig({
   theme: hopeTheme({
     logo: "/images/logo.svg",
     darkmode: "disable",
+    docsBranch: "dev",
+    docsDir: "docs",
+    docsRepo: "https://github.com/hmpl-lang/hmpl-lang.github.io",
     navbar: [
       // NavbarLink
       {
@@ -150,6 +153,11 @@ export default defineUserConfig({
     plugins: {
       search: true,
       backToTop: true,
+      git: {
+        createdTime: false,
+        updatedTime: false,
+        contributors: false,
+      },
       shiki: {
         langAlias: {
           hmpl: "html",

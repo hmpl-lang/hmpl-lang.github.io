@@ -6,9 +6,11 @@
 
 ### Result
 
-<div>
-  <button @click="switchComponent" class="getHTML">Get HTML!</button>
-  <component :is="currentComponent"></component>
+<div id="wrapper">
+  <div>
+    <button @click="switchComponent" class="getHTML">Get HTML!</button>
+    <component :is="currentComponent"></component>
+  </div>
 </div>
 
 <script setup>

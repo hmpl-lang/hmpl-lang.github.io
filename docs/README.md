@@ -33,8 +33,8 @@ const templateFn = compile(
   `<div>
   <form onsubmit="function prevent(e){e.preventDefault();};return prevent(event);" id="form">
     <div class="form-example">
-      <label for="name">Enter your email: </label>
-      <input type="text" name="email" id="email" required />
+      <label for="name">Enter random email: </label>
+      <input type="email" name="email" id="email" required />
     </div>
     <div class="form-example">
       <input type="submit" value="Register!" />
@@ -45,6 +45,7 @@ const templateFn = compile(
       {
         "src":"/api/register",
         "after":"submit:#form",
+        "repeat":false,
         "indicators": [
           {
             "trigger": "pending",
@@ -74,10 +75,10 @@ wrapper.appendChild(obj.response);
 <div id="wrapper">
   <div>
     <div>
-      <form @submit.prevent="" id="form">
+      <form @submit.prevent="switchComponent" id="form">
         <div class="form-example">
-          <label for="name">Enter your email: </label>
-          <input type="text" name="email" id="email" required />
+          <label for="name">Enter random email: </label>
+          <input v-model="email" type="email" name="email" id="email" required />
         </div>
         <div class="form-example">
           <input type="submit" value="Register!" />
@@ -91,20 +92,21 @@ wrapper.appendChild(obj.response);
 <script setup>
   import { createCommentVNode, h, ref } from 'vue'
   let id = ref(0);
-  const els = [createCommentVNode("hmpl0"), h("div", "Loading..."), h("div", "HTML from server")];
+  const email = ref("")
+  const els = [createCommentVNode("hmpl0"), h("div", "Loading...")];
   const Comment = (_, ctx) => els[0];
   const Loading = (_, ctx) => els[1];
-  const HTMLFromServer = (_, ctx) => els[2];
-    const currentComponent = ref(Comment)
-    const switchComponent = () => {
-      const isComment = currentComponent.value === Comment;
-      if(isComment){
-        currentComponent.value = Loading;
-        setTimeout(()=>{
-          currentComponent.value = HTMLFromServer;
-        }, 300);
-      }
+  const currentComponent = ref(Comment)
+  const switchComponent = () => {
+    const isComment = currentComponent.value === Comment;
+    if(isComment){
+      currentComponent.value = Loading;
+      setTimeout(()=>{
+        currentComponent.value = h("span", `Email ${email.value} successfully registered!`);
+        email.value = "";
+      }, 300);
     }
+  }
 </script>
 
 ## Why hmpl?

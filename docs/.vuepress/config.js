@@ -11,6 +11,9 @@ export default defineUserConfig({
   theme: hopeTheme({
     logo: "/images/logo.svg",
     darkmode: "disable",
+    repo: "hmpl-lang/hmpl",
+    repoLabel: "GitHub",
+    repoDisplay: true,
     docsBranch: "dev",
     docsDir: "docs",
     docsRepo: "https://github.com/hmpl-lang/hmpl-lang.github.io",
@@ -23,10 +26,6 @@ export default defineUserConfig({
       {
         text: "Docs",
         link: "introduction.md",
-      },
-      {
-        text: "GitHub",
-        link: "https://github.com/hmpl-lang/hmpl",
       },
       {
         text: "Examples",

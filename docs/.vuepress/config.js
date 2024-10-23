@@ -1,13 +1,21 @@
 import { defineUserConfig } from "vuepress/cli";
 import { viteBundler } from "@vuepress/bundler-vite";
 import { hopeTheme } from "vuepress-theme-hope";
-import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
 
 export default defineUserConfig({
   lang: "en-US",
   title: "HMPL.js",
   description: "Template language for displaying UI from server to client",
   port: 3000,
+  head: [
+    [
+      "meta",
+      {
+        name: "google-site-verification",
+        content: "0TMhzxMOiQDHH2of21VmZOh3Lrfdt84ElqI5y_GXqFY",
+      },
+    ],
+  ],
 
   theme: hopeTheme({
     logo: "/images/logo.svg",
@@ -166,11 +174,6 @@ export default defineUserConfig({
       },
     },
   }),
-  plugins: [
-    googleAnalyticsPlugin({
-      id: "G-8XPKT313LX",
-    }),
-  ],
   head: [["link", { rel: "icon", href: "/images/favicon.ico" }]],
   bundler: viteBundler(),
 });

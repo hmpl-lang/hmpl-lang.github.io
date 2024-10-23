@@ -7,15 +7,6 @@ export default defineUserConfig({
   title: "HMPL.js",
   description: "Template language for displaying UI from server to client",
   port: 3000,
-  head: [
-    [
-      "meta",
-      {
-        name: "google-site-verification",
-        content: "0TMhzxMOiQDHH2of21VmZOh3Lrfdt84ElqI5y_GXqFY",
-      },
-    ],
-  ],
 
   theme: hopeTheme({
     logo: "/images/logo.svg",
@@ -174,6 +165,15 @@ export default defineUserConfig({
       },
     },
   }),
-  head: [["link", { rel: "icon", href: "/images/favicon.ico" }]],
+  head: [
+    ["link", { rel: "icon", href: "/images/favicon.ico" }],
+    [
+      "meta",
+      {
+        name: "google-site-verification",
+        content: "0TMhzxMOiQDHH2of21VmZOh3Lrfdt84ElqI5y_GXqFY",
+      },
+    ],
+  ],
   bundler: viteBundler(),
 });

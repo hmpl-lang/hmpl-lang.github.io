@@ -1,6 +1,7 @@
 import { defineUserConfig } from "vuepress/cli";
 import { viteBundler } from "@vuepress/bundler-vite";
 import { hopeTheme } from "vuepress-theme-hope";
+import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
 
 export default defineUserConfig({
   lang: "en-US",
@@ -165,6 +166,11 @@ export default defineUserConfig({
       },
     },
   }),
+  plugins: [
+    googleAnalyticsPlugin({
+      id: "G-8XPKT313LX",
+    }),
+  ],
   head: [["link", { rel: "icon", href: "/images/favicon.ico" }]],
   bundler: viteBundler(),
 });

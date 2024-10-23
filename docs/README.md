@@ -70,7 +70,7 @@ const wrapper = document.getElementById("wrapper");
 wrapper.appendChild(obj.response);
 ```
 
-## Result
+### Result
 
 <div id="wrapper">
   <div>

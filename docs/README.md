@@ -33,8 +33,8 @@ const templateFn = compile(
   `<div>
   <form onsubmit="function prevent(e){e.preventDefault();};return prevent(event);" id="form">
     <div class="form-example">
-      <label for="name">Enter random email: </label>
-      <input type="email" name="email" id="email" required />
+      <label for="login">Login: </label>
+      <input type="login" name="login" id="login" required />
     </div>
     <div class="form-example">
       <input type="submit" value="Register!" />
@@ -77,8 +77,8 @@ wrapper.appendChild(obj.response);
     <div>
       <form @submit.prevent="switchComponent" id="form">
         <div class="form-example">
-          <label for="name">Enter random email: </label>
-          <input v-model="email" type="email" name="email" id="email" required />
+          <label for="login">User name: </label>
+          <input v-model="login" type="login" name="login" id="login" required />
         </div>
         <div class="form-example">
           <input type="submit" value="Register!" />
@@ -92,7 +92,7 @@ wrapper.appendChild(obj.response);
 <script setup>
   import { createCommentVNode, h, ref } from 'vue'
   let id = ref(0);
-  const email = ref("")
+  const login = ref("")
   const els = [createCommentVNode("hmpl0"), h("div", "Loading...")];
   const Comment = (_, ctx) => els[0];
   const Loading = (_, ctx) => els[1];
@@ -102,8 +102,8 @@ wrapper.appendChild(obj.response);
     if(isComment){
       currentComponent.value = Loading;
       setTimeout(()=>{
-        currentComponent.value = h("span", `Email ${email.value} successfully registered!`);
-        email.value = "";
+        currentComponent.value = h("span", `Hello, ${login.value}!`);
+        login.value = "";
       }, 300);
     }
   }

@@ -32,6 +32,10 @@ export default defineUserConfig({
         link: "examples.md",
       },
       {
+        text: "X (Twitter)",
+        link: "https://x.com/hmpljs",
+      },
+      {
         text: "Blog",
         link: "https://hmpl-lang.github.io/blog",
       },

@@ -151,7 +151,9 @@ export default defineUserConfig({
     ],
     plugins: {
       search: true,
-      backToTop: true,
+      sitemap: {
+        hostname: "hmpl-lang.github.io",
+      },
       git: {
         createdTime: false,
         updatedTime: false,
